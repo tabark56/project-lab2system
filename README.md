@@ -1,4 +1,4 @@
-# Saffarni (Project-Lab1)
+# Saffarni (Project-Lab2)
 A website for planning trips.
 Main page : `index.html`.
 Other pages: `about.html` and `contact.html`.
