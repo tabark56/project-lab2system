@@ -1,0 +1,271 @@
+:root {
+    color-scheme: light;
+    --page-background: #dce8e8;
+    --page-tint: rgba(220, 232, 232, 0.3);
+    --text: #18324a;
+    --surface: rgba(255, 255, 255, 0.95);
+    --border: #c5d4d8;
+    --heading: #164e63;
+    --subheading: #24657a;
+    --accent: #164e63;
+    --table-heading: #24657a;
+    --field-background: rgba(255, 255, 255, 0.95);
+    --success-background: #d4edda;
+    --success-text: #155724;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --page-background: #101b22;
+        --page-tint: rgba(8, 17, 24, 0.48);
+        --text: #e8eef0;
+        --surface: rgba(24, 35, 43, 0.96);
+        --border: #52656d;
+        --heading: #b8e4ed;
+        --subheading: #9bcbd6;
+        --accent: #103947;
+        --table-heading: #1f5665;
+        --field-background: rgba(16, 27, 34, 0.96);
+        --success-background: #173c2b;
+        --success-text: #c8f0d5;
+    }
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--page-background);
+    background-image: linear-gradient(var(--page-tint), var(--page-tint)), url('../assets/airplane-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+    background-color: var(--accent);
+}
+
+h1 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+nav {
+    margin: 10px 0 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    width: 85%;
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 20px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+h2 {
+    margin: 0 0 16px;
+    color: var(--heading);
+    font-size: 26px;
+}
+
+h3 {
+    margin: 0 0 10px;
+    color: var(--subheading);
+    font-size: 20px;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+ul,
+ol {
+    margin: 0 0 20px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid var(--border);
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    color: #ffffff;
+    background-color: var(--table-heading);
+}
+
+.row {
+    margin: 0 0 16px;
+}
+
+label,
+legend {
+    font-weight: bold;
+}
+
+.field {
+    width: 90%;
+    margin: 6px 0 0;
+    padding: 10px;
+    color: var(--text);
+    background-color: var(--field-background);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+fieldset {
+    margin: 0 0 16px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 18px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+}
+
+.center {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--accent);
+    border-radius: 5px;
+}
+
+footer {
+    padding: 16px;
+    color: var(--heading);
+    text-align: center;
+}
+.cards {
+display: grid;
+grid-template-columns: 1fr;
+gap: 16px;
+}
+@media (min-width: 600px) {
+.cards { grid-template-columns: repeat(2, 1fr); }
+}
+/* Desktop and up: 4 columns */
+@media (min-width: 1024px) {
+.cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+.overlay {
+position: fixed; inset: 0; 
+background: rgba(0,0,0,.55);
+display: flex; justify-content: center; align-items: center;
+opacity: 0; pointer-events: none; 
+transition: opacity .25s;
+}
+.overlay:target { opacity: 1; pointer-events: auto; } 
+.dialog { background: var(--surface); padding: 24px; border-radius: 12px; max-width: 400px; }
+
+.submit-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    color: var(--text);
+    background: var(--surface);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.btn-ok {
+    background: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.btn-close {
+    background: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+
+.alert-success {
+    display: none;
+    background: var(--success-background);
+    color: var(--success-text);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.alert-success:target {
+    display: block;
+}
